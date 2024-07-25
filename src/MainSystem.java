@@ -1,4 +1,4 @@
-import menu.FirstMenu;
+import menu.main.FirstMenu;
 
 public class MainSystem {
     public static void main(String[] args) {

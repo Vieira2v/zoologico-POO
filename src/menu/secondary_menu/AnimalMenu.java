@@ -1,11 +1,13 @@
-package menu;
+package menu.secondary_menu;
 
 import java.util.Scanner;
 
 import animals.Animal;
 import animals.Vertebrates;
+import menu.Management;
+import menu.main.MainMenu;
 
-public class AnimalMenu extends MainMenu{
+public class AnimalMenu implements MainMenu{
     Scanner input = new Scanner(System.in);
     Vertebrates animal = new Vertebrates();
 

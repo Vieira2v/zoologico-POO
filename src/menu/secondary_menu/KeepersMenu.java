@@ -1,14 +1,14 @@
-package menu.employees;
+package menu.secondary_menu;
 
 import java.util.Scanner;
 
 import animals.Animal;
 import employees.Employees;
 import employees.Keepers;
-import menu.MainMenu;
 import menu.Management;
+import menu.main.MainMenu;
 
-public class KeepersMenu extends MainMenu{
+public class KeepersMenu implements MainMenu{
     private Keepers keepers;
     private String foodAlternative;
     private int foodQtd;
@@ -18,7 +18,6 @@ public class KeepersMenu extends MainMenu{
     
     public KeepersMenu() {
         this.keepers = new Keepers();
-        this.cleaningValue = 230;
     }
 
     public String getFoodAlternative() {
@@ -92,7 +91,7 @@ public class KeepersMenu extends MainMenu{
                 System.out.println("=================");
                 System.out.println("Did you need food replacement?");
                 setFoodAlternative(input.nextLine());
-                if (foodAlternative.equals("Yes")) {
+                if (getFoodAlternative().equals("Yes")) {
                     System.out.println("Quantity kilograms: ");
                     setFoodQtd(input.nextInt());
                     Management.registerFoods(getFoodQtd());
@@ -104,6 +103,7 @@ public class KeepersMenu extends MainMenu{
                 System.out.println("Was it necessary to clean the habitat?");
                 setHabitatCleaning(input.nextLine());
                 if (habitatCleaning.equals("Yes")) {
+                    setCleaningValue(230);
                     System.out.println(getCleaningValue());
                     Management.registerCleaning(getCleaningValue());
                 }else {

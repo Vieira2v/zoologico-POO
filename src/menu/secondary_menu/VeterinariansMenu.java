@@ -1,14 +1,14 @@
-package menu.employees;
+package menu.secondary_menu;
 
 import java.util.Scanner;
 
 import animals.Animal;
 import employees.Employees;
 import employees.Veterinarians;
-import menu.MainMenu;
 import menu.Management;
+import menu.main.MainMenu;
 
-public class VeterinariansMenu extends MainMenu {
+public class VeterinariansMenu implements MainMenu {
     private Veterinarians veterinarians = new Veterinarians();
     private String alternativeQuery;
     private int queryValeu;
@@ -16,7 +16,6 @@ public class VeterinariansMenu extends MainMenu {
 
     public VeterinariansMenu() {
         this.veterinarians = new Veterinarians();
-        this.queryValeu = 500;
     }
 
     public String getAlternativeQuery() {
@@ -72,6 +71,7 @@ public class VeterinariansMenu extends MainMenu {
                 System.out.println("Did this animal require consultation?");
                 setAlternativeQuery(input.nextLine());
                 if (alternativeQuery.equals("Yes")) {
+                    setQueryValue(500);
                     System.out.println(getQueryValeu());
                     Management.registerConsultations(getQueryValeu());
                 }else {

@@ -1,12 +1,23 @@
-package menu.employees;
+package menu.main;
 
 import java.util.Scanner;
 
-import menu.MainMenu;
+import menu.secondary_menu.AdmMenu;
+import menu.secondary_menu.KeepersMenu;
+import menu.secondary_menu.VeterinariansMenu;
 
-public class EmployeesMenu extends MainMenu{
+public class EmployeesMenu implements MainMenu{
+    private int option;
     Scanner input = new Scanner(System.in);
 
+    public int getOption() {
+        return option;
+    }
+
+    public void setOption(int option) {
+        this.option = option;
+    }
+    
     public EmployeesMenu() {
         setOption(7);
     }
@@ -57,7 +68,7 @@ public class EmployeesMenu extends MainMenu{
                 vetMenu.dailyVetForm();
                 break;
             case 9:
-                admMenu.dailyAdmForm();
+                admMenu.expenseList();
                 break;
         }
     }

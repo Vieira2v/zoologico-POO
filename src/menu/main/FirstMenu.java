@@ -1,12 +1,21 @@
-package menu;
+package menu.main;
 
 import java.util.Scanner;
 
-import menu.employees.EmployeesMenu;
+import menu.secondary_menu.AnimalMenu;
 
 
-public class FirstMenu extends MainMenu{
+public class FirstMenu implements MainMenu{
+    private int option;
     Scanner input = new Scanner(System.in);
+
+    public int getOption() {
+        return option;
+    }
+
+    public void setOption(int option) {
+        this.option = option;
+    }
 
     public FirstMenu(){
         setOption(7);
@@ -16,8 +25,8 @@ public class FirstMenu extends MainMenu{
     public void displayMenu() {
         System.out.println("======= MENU =======");
         System.out.println("1-Register animal.");
-        System.out.println("2-Register employee.");
-        System.out.println("3-List of animals.");
+        System.out.println("2-List of animals.");
+        System.out.println("3-Employee management.");
         System.out.println("0-Close.");
         setOption(input.nextInt());
     }
@@ -30,11 +39,11 @@ public class FirstMenu extends MainMenu{
                 animalMenu.displayMenu();
                 break;
             case 2:
-                employeesMenu.displayMenu();
-                employeesMenu.choiceOfRole();
+                animalMenu.listAnimals();
                 break;
             case 3:
-                animalMenu.listAnimals();
+                employeesMenu.displayMenu();
+                employeesMenu.choiceOfRole();
                 break;
         }
     }
