@@ -76,7 +76,7 @@ public class AdmMenu implements MainMenu{
         System.out.println("=================");
     }
 
-    public void cleanAllList() {
+    private void cleanAllList() {
         Management.getListMonthlyFoods().clear();
         Management.getListMonthlyCleaning().clear();
         Management.getlistMonthlyConsultations().clear();

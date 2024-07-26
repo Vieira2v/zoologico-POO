@@ -25,7 +25,7 @@ public class AnimalMenu implements MainMenu{
         Management.registerAnimal(animal);
     }
 
-    public void helpMenu() {
+    private void helpMenu() {
         System.out.println("==============");
         System.out.println("Options, food");
         System.out.println("==============");
