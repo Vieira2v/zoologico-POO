@@ -36,6 +36,23 @@ public class EmployeesMenu implements MainMenu{
         System.out.println("9-Administrator's daily form.");
         System.out.println("0-Close.");
         setOption(input.nextInt());
+        if (getOption() > 9) {
+            while (getOption() > 9) {
+                System.out.println("ERROR! Enter one of the options above!!");
+                System.out.println("======= EMPLOYEES =======");
+                System.out.println("1-Register a new Keepers.");
+                System.out.println("2-Register a new Veterinarians.");
+                System.out.println("3-Register a new Administrators.");
+                System.out.println("4-Current Keepers.");
+                System.out.println("5-Current Veterinarians.");
+                System.out.println("6-Current Administrators.");
+                System.out.println("7-Keeper's daily form.");
+                System.out.println("8-Veterinarian's daily form.");
+                System.out.println("9-Administrator's daily form.");
+                System.out.println("0-Close.");
+                setOption(input.nextInt());
+            }
+        }
     }
     
     public void choiceOfRole() {

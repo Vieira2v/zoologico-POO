@@ -29,6 +29,16 @@ public class FirstMenu implements MainMenu{
         System.out.println("3-Employee management.");
         System.out.println("0-Close.");
         setOption(input.nextInt());
+        if (getOption() > 3) {
+            while (getOption() > 3) {
+                System.out.println("======= MENU =======");
+                System.out.println("1-Register animal.");
+                System.out.println("2-List of animals.");
+                System.out.println("3-Employee management.");
+                System.out.println("0-Close.");
+                setOption(input.nextInt());
+            }
+        }
     }
 
     public void processExecution() {
